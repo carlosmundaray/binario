@@ -1,0 +1,14 @@
+# Carpetas de compilación e imágenes ISO
+out/
+work/
+/tmp/
+*.iso
+*.img
+*.squashfs
+SHA256SUMS.txt
+
+# Archivos de sistema / temporales
+.DS_Store
+Thumbs.db
+*.swp
+*~

@@ -1,0 +1,31 @@
+---
+componentName:  binario
+welcomeStyleCalamares: true
+welcomeExpandingLogo: true
+windowExpanding: normal
+windowSize: 800px,520px
+windowPlacement: center
+
+strings:
+    productName:         "Binario Linux"
+    shortProductName:    "Binario"
+    version:             "2026.1"
+    shortVersion:        "2026.1"
+    versionedName:       "Binario Linux 2026.1 (Gaming & Security Edition)"
+    shortVersionedName:  "Binario 2026.1"
+    bootloaderEntryName: "Binario"
+    productUrl:          "https://github.com/carlosmundaray/binario"
+    supportUrl:          "https://github.com/carlosmundaray/binario/issues"
+    knownIssuesUrl:      "https://github.com/carlosmundaray/binario/issues"
+    releaseNotesUrl:     "https://github.com/carlosmundaray/binario/releases"
+
+images:
+    productLogo:         "logo.png"
+    productIcon:         "logo.png"
+    productWelcome:      "welcome.png"
+
+style:
+   SidebarBackground:    "#111827"
+   SidebarTextColor:     "#F9FAFB"
+   SidebarTextHighlight: "#00E5FF"
+   SidebarSelectHighlight: "#1F2937"

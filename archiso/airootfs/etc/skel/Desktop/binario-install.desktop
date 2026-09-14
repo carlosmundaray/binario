@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Instalar Binario Linux
+GenericName=Instalador del Sistema
+Comment=Instalar Binario Linux en tu disco duro o SSD
+Exec=/usr/local/bin/binario-install
+Icon=system-software-install
+Terminal=false
+StartupNotify=true
+Categories=System;

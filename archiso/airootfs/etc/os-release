@@ -1,0 +1,11 @@
+NAME="Binario Linux"
+PRETTY_NAME="Binario Linux (Gaming & Security Edition)"
+ID=binario
+ID_LIKE=arch
+BUILD_ID=rolling
+ANSI_COLOR="38;2;0;200;255"
+HOME_URL="https://github.com/carlosmundaray/binario"
+DOCUMENTATION_URL="https://wiki.archlinux.org"
+SUPPORT_URL="https://github.com/carlosmundaray/binario/issues"
+BUG_REPORT_URL="https://github.com/carlosmundaray/binario/issues"
+LOGO=binario-logo

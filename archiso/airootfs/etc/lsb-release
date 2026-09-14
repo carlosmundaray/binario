@@ -1,0 +1,4 @@
+DISTRIB_ID=Binario
+DISTRIB_RELEASE=rolling
+DISTRIB_DESCRIPTION="Binario Linux Gaming & Security"
+DISTRIB_CODENAME=rolling

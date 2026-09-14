@@ -1,0 +1,33 @@
+name: Build Binario Linux ISO
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
+
+jobs:
+  build-iso:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del Repositorio
+        uses: actions/checkout@v4
+
+      - name: Compilar ISO de Binario Linux con Archiso
+        uses: visualphoenix/archiso-action@v2
+        with:
+          profile-dir: 'archiso'
+          work-dir: '/tmp/archiso-work'
+          output-dir: 'out'
+
+      - name: Calcular Checksum SHA256
+        run: |
+          cd out
+          sha256sum *.iso > SHA256SUMS.txt
+          cat SHA256SUMS.txt
+
+      - name: Subir ISO como Artefacto de GitHub
+        uses: actions/upload-artifact@v4
+        with:
+          name: binario-linux-iso
+          path: out/*
+          retention-days: 7

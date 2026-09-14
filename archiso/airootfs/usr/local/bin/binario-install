@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# ==============================================================================
+# BINARIO LINUX - LAUNCHER DEL INSTALADOR
+# ==============================================================================
+
+if command -v calamares &>/dev/null; then
+    echo "Iniciando instalador gráfico Calamares para Binario Linux..."
+    pkexec calamares -d
+else
+    echo "Calamares no encontrado, iniciando instalador asistido archinstall..."
+    sudo archinstall
+fi

@@ -1,0 +1,13 @@
+[38;2;0;220;255m
+  ____  _             _         
+ | __ )(_)_ __   __ _| |_ _   _ 
+ |  _ \| | '_ \ / _` | __| | | |
+ | |_) | | | | | (_| | |_| |_| |
+ |____/|_|_| |_|\__,_|\__|\__,_|  [Gaming & Security Edition]
+[0m
+Bienvenido a \e[1mBinario Linux\e[0m (\l) - Arch Linux Optimized Kernel
+Fecha y hora: \d \t
+
+Para iniciar el instalador grafico ejecuta: \e[1;32mbinario-install\e[0m
+O instalador en terminal: \e[1;36marchinstall\e[0m
+

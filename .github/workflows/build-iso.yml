@@ -7,17 +7,45 @@ on:
 
 jobs:
   build-iso:
+    name: Compilar ISO de Binario Linux
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout del Repositorio
         uses: actions/checkout@v4
 
-      - name: Compilar ISO de Binario Linux con Archiso
-        uses: visualphoenix/archiso-action@v2
-        with:
-          profile-dir: 'archiso'
-          work-dir: '/tmp/archiso-work'
-          output-dir: 'out'
+      - name: Optimizar y liberar espacio en disco
+        run: |
+          sudo rm -rf /usr/share/dotnet /opt/ghc "/usr/local/share/boost" "$AGENT_TOOLSDIRECTORY" || true
+          df -h
+
+      - name: Compilar ISO con Archiso en Contenedor Privilegiado
+        run: |
+          mkdir -p out
+          docker run --privileged --rm \
+            -v "${PWD}:/workspace" \
+            -w /workspace \
+            archlinux:latest \
+            bash -c "
+              set -e
+              echo '==> [1/4] Inicializando llaves y actualizando paquetes base...'
+              pacman-key --init
+              pacman-key --populate archlinux
+              pacman -Sy --noconfirm archiso syslinux mkinitcpio
+
+              echo '==> [2/4] Copiando módulos de arranque de Syslinux (BIOS)...'
+              if [ -d /usr/lib/syslinux/bios ]; then
+                cp /usr/lib/syslinux/bios/*.c32 /workspace/archiso/syslinux/ 2>/dev/null || true
+              fi
+
+              echo '==> [3/4] Ajustando permisos de ejecución de scripts y lanzadores...'
+              chmod +x /workspace/archiso/airootfs/root/customize_airootfs.sh || true
+              chmod +x /workspace/archiso/airootfs/usr/local/bin/* || true
+
+              echo '==> [4/4] Compilando Binario Linux con mkarchiso...'
+              mkarchiso -v -w /tmp/archiso-work -o /workspace/out /workspace/archiso
+            "
 
       - name: Calcular Checksum SHA256
         run: |
@@ -25,9 +53,9 @@ jobs:
           sha256sum *.iso > SHA256SUMS.txt
           cat SHA256SUMS.txt
 
-      - name: Subir ISO como Artefacto de GitHub
+      - name: Subir ISO como Artefacto de Descarga
         uses: actions/upload-artifact@v4
         with:
           name: binario-linux-iso
           path: out/*
-          retention-days: 7
+          retention-days: 14

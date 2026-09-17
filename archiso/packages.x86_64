@@ -194,6 +194,9 @@ which
 # --- INSTALADOR Y SOPORTE LIVE ---
 arch-install-scripts
 archinstall
+mkinitcpio
+mkinitcpio-archiso
+pv
 hwinfo
 reflector
 pacman-contrib

@@ -96,4 +96,7 @@ echo "==> [Binario] Configurando Fastfetch para inicio de terminal..."
 echo "fastfetch" >> /etc/skel/.bashrc
 echo "fastfetch" >> /root/.bashrc
 
+echo "==> [Binario] Generando initramfs con soporte Live archiso para kernels..."
+mkinitcpio -P || true
+
 echo "==> [Binario] Personalización completada con éxito."

@@ -11,8 +11,8 @@ pacman-key --populate archlinux
 pacman -Sy --noconfirm archiso syslinux mkinitcpio
 
 echo "==> [2/4] Copiando perfil al sistema de archivos nativo de Linux..."
-rm -rf /tmp/profile /tmp/archiso-work
-mkdir -p /tmp/profile
+rm -rf /tmp/profile /tmp/archiso-work /tmp/iso_out
+mkdir -p /tmp/profile /tmp/iso_out
 cp -r /archiso_in/* /tmp/profile/
 
 echo "==> [3/4] Configurando módulos Syslinux (BIOS) y permisos..."
@@ -23,7 +23,12 @@ chmod +x /tmp/profile/airootfs/root/customize_airootfs.sh || true
 chmod +x /tmp/profile/airootfs/usr/local/bin/* || true
 
 echo "==> [4/4] Ejecutando mkarchiso para compilar Binario Linux..."
-mkarchiso -v -w /tmp/archiso-work -o /out /tmp/profile
+mkarchiso -v -w /tmp/archiso-work -o /tmp/iso_out /tmp/profile
+
+echo "==> Moviendo ISO terminada a la carpeta de salida..."
+rm -rf /tmp/archiso-work /tmp/profile
+mv /tmp/iso_out/*.iso /out/
+sync
 
 echo "=========================================================="
 echo "==> [✓] ¡COMPILACIÓN DE LA ISO COMPLETADA EXITOSAMENTE!"

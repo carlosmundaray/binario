@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Steam
+GenericName=Tienda y Plataforma de Videojuegos
+Comment=Plataforma de videojuegos de Valve y gestión de librerías con soporte Proton
+Exec=/usr/bin/steam %U
+Icon=steam
+Terminal=false
+StartupNotify=true
+Categories=Game;

@@ -18,7 +18,7 @@ hwclock --systohc --utc
 
 echo "==> [Binario] Creando usuario live 'binario'..."
 groupadd -r -g 1000 binario || true
-useradd -m -u 1000 -g 1000 -G wheel,video,audio,storage,optical,network,power,gamemode -s /bin/bash binario || true
+useradd -m -u 1000 -g 1000 -G wheel,video,audio,storage,optical,network,power,gamemode,input -s /bin/bash binario || true
 echo "binario:binario" | chpasswd
 echo "root:root" | chpasswd
 
@@ -38,6 +38,9 @@ echo "==> [Binario] Configurando UFW Firewall por defecto..."
 ufw default deny incoming || true
 ufw default allow outgoing || true
 
+echo "==> [Binario] Habilitando repositorio Flathub para Gaming & Apps..."
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo || true
+
 echo "==> [Binario] Habilitando servicios Systemd esenciales..."
 systemctl enable NetworkManager.service || true
 systemctl enable sddm.service || true
@@ -45,6 +48,9 @@ systemctl enable ufw.service || true
 systemctl enable apparmor.service || true
 systemctl enable ananicy-cpp.service || true
 systemctl enable power-profiles-daemon.service || true
+
+echo "==> [Binario] Configurando permisos de accesos directos en el escritorio..."
+chmod +x /etc/skel/Desktop/*.desktop 2>/dev/null || true
 
 echo "==> [Binario] Configurando Fastfetch para inicio de terminal..."
 echo "fastfetch" >> /etc/skel/.bashrc

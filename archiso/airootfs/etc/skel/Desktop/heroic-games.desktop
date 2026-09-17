@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Epic Games & GOG (Heroic)
+GenericName=Lanzador de Epic Games y GOG
+Comment=Lanzador nativo para jugar a tus títulos de Epic Games Store, GOG y Amazon Prime Games
+Exec=/usr/local/bin/launch-heroic %u
+Icon=com.heroicgameslauncher.hgl
+Terminal=false
+StartupNotify=true
+Categories=Game;

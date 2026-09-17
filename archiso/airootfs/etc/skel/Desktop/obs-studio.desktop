@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=OBS Studio
+GenericName=Software de Grabación y Streaming
+Comment=Graba tus partidas y transmite en vivo en Twitch, YouTube y Kick
+Exec=/usr/bin/obs
+Icon=com.obsproject.Studio
+Terminal=false
+StartupNotify=true
+Categories=AudioVideo;Recorder;

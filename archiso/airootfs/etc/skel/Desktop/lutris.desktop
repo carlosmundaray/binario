@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Lutris Gaming
+GenericName=Gestor Universal de Juegos
+Comment=Gestor para Epic Games, Battle.net, EA App, Ubisoft Connect y emuladores
+Exec=/usr/bin/lutris %U
+Icon=lutris
+Terminal=false
+StartupNotify=true
+Categories=Game;

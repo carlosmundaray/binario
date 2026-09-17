@@ -29,9 +29,11 @@ echo "[+] Limpiando directorios de trabajo anteriores..."
 rm -rf "${WORK_DIR}"
 mkdir -p "${OUT_DIR}"
 
-echo "[+] Ajustando permisos del script customize_airootfs.sh..."
+echo "[+] Ajustando permisos de los scripts de personalización y lanzadores..."
 chmod +x "${PROFILE_DIR}/airootfs/root/customize_airootfs.sh" || true
 chmod +x "${PROFILE_DIR}/airootfs/usr/local/bin/binario-install" || true
+chmod +x "${PROFILE_DIR}/airootfs/usr/local/bin/launch-heroic" || true
+chmod +x "${PROFILE_DIR}/airootfs/usr/local/bin/launch-protonup" || true
 
 echo "[+] Iniciando proceso de compilación con mkarchiso..."
 mkarchiso -v -w "${WORK_DIR}" -o "${OUT_DIR}" "${PROFILE_DIR}"

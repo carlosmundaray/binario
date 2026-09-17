@@ -90,21 +90,60 @@ lib32-opencl-nvidia
 
 # --- STACK DE GAMING & EMULACIÓN ---
 steam
+steam-native-runtime
 gamemode
 lib32-gamemode
 mangohud
 lib32-mangohud
 goverlay
 wine-staging
+wine-mono
+wine-gecko
 winetricks
+vkd3d
+lib32-vkd3d
 lutris
 gamescope
 vulkan-mesa-layers
 lib32-vulkan-mesa-layers
+cabextract
 
-# Mandos y Controladores de Juego
+# Mandos y Controladores de Juego (PlayStation, Xbox, Switch, Steam Controller)
 game-devices-udev
 steam-devices
+
+# Multimedia & Codecs para Juegos (Evita pantallas negras en cinemáticas de Wine/Proton)
+gst-plugins-base
+gst-plugins-good
+gst-plugins-bad
+gst-plugins-ugly
+gst-libav
+lib32-gst-plugins-base
+lib32-gst-plugins-good
+
+# Librerías de Audio y Compatibilidad Multilib (32 bits para juegos antiguos/Wine)
+lib32-alsa-plugins
+lib32-alsa-lib
+lib32-libpulse
+lib32-openal
+lib32-gnutls
+lib32-gtk3
+lib32-libva
+lib32-libvdpau
+lib32-sdl2
+lib32-libxss
+lib32-nss
+
+# --- STREAMING, CHAT Y CREACIÓN DE CONTENIDO ---
+obs-studio
+discord
+
+# --- FUENTES Y TIPOGRAFÍAS (ESENCIALES PARA JUEGOS Y NAVEGADORES) ---
+ttf-dejavu
+ttf-liberation
+noto-fonts
+noto-fonts-cjk
+noto-fonts-emoji
 
 # --- OPTIMIZACIÓN DEL SISTEMA ---
 zram-generator

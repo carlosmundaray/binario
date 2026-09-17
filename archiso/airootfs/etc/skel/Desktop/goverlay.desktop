@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=GOverlay (MangoHud FPS)
+GenericName=Configurador de Overlay FPS
+Comment=Interfaz gráfica para configurar MangoHud y mostrar FPS, temperaturas y hardware en pantalla
+Exec=/usr/bin/goverlay
+Icon=io.github.benjamimgois.goverlay
+Terminal=false
+StartupNotify=true
+Categories=Game;Settings;

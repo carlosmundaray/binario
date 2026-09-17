@@ -28,4 +28,6 @@ file_permissions=(
   ["/root"]="0:0:700"
   ["/root/customize_airootfs.sh"]="0:0:755"
   ["/usr/local/bin/binario-install"]="0:0:755"
+  ["/usr/local/bin/launch-heroic"]="0:0:755"
+  ["/usr/local/bin/launch-protonup"]="0:0:755"
 )

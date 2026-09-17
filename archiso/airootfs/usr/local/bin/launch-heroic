@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+# ==============================================================================
+# BINARIO LINUX - HEROIC GAMES LAUNCHER (EPIC GAMES / GOG) LAUNCHER
+# ==============================================================================
+
+set -e
+
+APP_ID="com.heroicgameslauncher.hgl"
+
+# 1. Comprobar si existe como binario de sistema
+if command -v heroic &>/dev/null; then
+    exec heroic "$@"
+fi
+
+# 2. Comprobar si está instalado vía Flatpak
+if flatpak info "${APP_ID}" &>/dev/null; then
+    exec flatpak run "${APP_ID}" "$@"
+fi
+
+# 3. Si no está instalado, ofrecer instalación automática mediante GUI o Terminal
+if command -v kdialog &>/dev/null; then
+    kdialog --title "Heroic Games Launcher (Epic Games)" \
+            --yesno "Heroic Games Launcher (el cliente para Epic Games y GOG) se descargará e instalará automáticamente a través de Flathub.\n\n¿Deseas continuar?"
+    
+    if [ $? -eq 0 ]; then
+        konsole --hold -e bash -c "echo '[+] Agregando repositorio Flathub e instalando Heroic Games Launcher...'; flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo; flatpak install -y flathub ${APP_ID}; echo '[✓] Instalación completada. Iniciando...'; flatpak run ${APP_ID}"
+    fi
+else
+    echo "[+] Instalando Heroic Games Launcher desde Flathub..."
+    flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+    flatpak install -y flathub "${APP_ID}"
+    flatpak run "${APP_ID}" "$@"
+fi

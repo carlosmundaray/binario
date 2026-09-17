@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=ProtonUp-Qt (GE-Proton)
+GenericName=Gestor de Versiones Proton / Wine
+Comment=Instalar y actualizar GE-Proton y Wine-GE para Steam y Heroic con un clic
+Exec=/usr/local/bin/launch-protonup
+Icon=net.davidotek.pupgui2
+Terminal=false
+StartupNotify=true
+Categories=Game;Utility;

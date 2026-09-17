@@ -6,11 +6,23 @@
 
 ## 🚀 Características Principales
 
-### 🎮 Gaming de Alto Rendimiento
-- **Dual Kernel**: `linux-zen` (optimizado para baja latencia en juegos) y `linux-lts` (máxima estabilidad).
-- **Stack Gráfico y Drivers**: Mesa, Vulkan completo (AMD, Intel, Nvidia DKMS) y compatibilidad multilib de 32 bits preinstalada.
-- **Herramientas de Juegos**: Steam, Wine Staging, Lutris, GameMode (`gamemode`), MangoHud y soporte para mandos de Xbox, PlayStation y Nintendo.
-- **Optimizaciones de Memoria**: `vm.max_map_count` ajustado para juegos Unreal Engine 5 / Proton, y `zram` con compresión ZSTD.
+### 🎮 Gaming y Tiendas Preinstaladas
+- **Tiendas y Lanzadores**:
+  - **Steam**: Plataforma líder con compatibilidad Proton y Steam Native Runtime preconfigurados.
+  - **Epic Games Store & GOG (Heroic Launcher)**: Lanzador nativo de alto rendimiento para tus bibliotecas de Epic Games, GOG y Prime Gaming.
+  - **Lutris**: Gestor universal para Epic Games, Battle.net, EA App, Ubisoft Connect y emuladores.
+  - **ProtonUp-Qt**: Gestor gráfico para descargar e instalar con un clic las versiones más recientes de **GE-Proton** (Proton-GE) y Wine-GE.
+- **Rendimiento & Overlays**:
+  - **Feral GameMode** (`gamemode` + 32-bit): Ajuste automático de prioridades y gobernador de CPU al iniciar juegos.
+  - **MangoHud & GOverlay**: Monitor gamer en pantalla para FPS, frametimes, uso de VRAM/RAM y temperaturas de GPU/CPU.
+  - **Valve Gamescope**: Microcompositor para FSR scaling, control de latencia y resolución.
+- **Capa de Compatibilidad & Codecs**:
+  - **Wine Staging**, **Wine Mono**, **Wine Gecko**, **Winetricks** y **VKD3D** (Direct3D 12 -> Vulkan).
+  - **Stack GStreamer completo** (plugins good, bad, ugly, libav) para garantizar la reproducción fluida de cinemáticas en juegos de Windows sin pantallas negras.
+  - **Soporte Plug & Play para Mandos**: Reglas `udev` para PlayStation DualSense/DualShock, Xbox One/Series X/S, Nintendo Switch Pro y volantes.
+- **Streaming y Comunicación**:
+  - **OBS Studio** para grabación y streaming de partidas en Twitch/YouTube.
+  - **Discord** para chat de voz en grupo.
 
 ### 🛡️ Seguridad y Respaldo
 - **Hardening del Sistema**: AppArmor activo por defecto para confinamiento de procesos.

@@ -80,8 +80,8 @@ lib32-vulkan-intel
 intel-media-driver
 libva-intel-driver
 
-# Nvidia (DKMS para compatibilidad con Zen y LTS)
-nvidia-dkms
+# Nvidia (Módulos de Kernel Abiertos Oficiales para máxima compatibilidad)
+nvidia-open-dkms
 nvidia-utils
 lib32-nvidia-utils
 nvidia-settings
@@ -90,7 +90,6 @@ lib32-opencl-nvidia
 
 # --- STACK DE GAMING & EMULACIÓN ---
 steam
-steam-native-runtime
 gamemode
 lib32-gamemode
 mangohud
@@ -109,7 +108,6 @@ lib32-vulkan-mesa-layers
 cabextract
 
 # Mandos y Controladores de Juego (PlayStation, Xbox, Switch, Steam Controller)
-game-devices-udev
 steam-devices
 
 # Multimedia & Codecs para Juegos (Evita pantallas negras en cinemáticas de Wine/Proton)
@@ -118,19 +116,14 @@ gst-plugins-good
 gst-plugins-bad
 gst-plugins-ugly
 gst-libav
-lib32-gst-plugins-base
-lib32-gst-plugins-good
 
 # Librerías de Audio y Compatibilidad Multilib (32 bits para juegos antiguos/Wine)
 lib32-alsa-plugins
 lib32-alsa-lib
 lib32-libpulse
-lib32-openal
 lib32-gnutls
 lib32-gtk3
 lib32-libva
-lib32-libvdpau
-lib32-sdl2
 lib32-libxss
 lib32-nss
 
@@ -161,7 +154,7 @@ sudo
 
 # --- ENTORNO DE ESCRITORIO (KDE PLASMA 6) ---
 plasma-desktop
-plasma-wayland-session
+plasma-workspace
 plasma-nm
 plasma-pa
 powerdevil
@@ -193,24 +186,16 @@ nano
 vim
 unrar
 unzip
-p7zip
+7zip
 zip
 tar
 which
-neofetch
 
 # --- INSTALADOR Y SOPORTE LIVE ---
 arch-install-scripts
 archinstall
-calamares
-boost-libs
-kconfig
-kcoreaddons
-kiconthemes
-ki18n
-kio
-solid
-yaml-cpp
 hwinfo
 reflector
 pacman-contrib
+syslinux
+edk2-shell

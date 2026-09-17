@@ -6,6 +6,46 @@
 
 set -e -u
 
+echo "==> [Binario] Configurando identidad del sistema..."
+echo "binario-os" > /etc/hostname
+
+cat << 'EOF' > /etc/os-release
+NAME="Binario Linux"
+PRETTY_NAME="Binario Linux (Gaming & Security Edition)"
+ID=binario
+ID_LIKE=arch
+BUILD_ID=rolling
+ANSI_COLOR="38;2;0;200;255"
+HOME_URL="https://github.com/carlosmundaray/binario"
+DOCUMENTATION_URL="https://wiki.archlinux.org"
+SUPPORT_URL="https://github.com/carlosmundaray/binario/issues"
+BUG_REPORT_URL="https://github.com/carlosmundaray/binario/issues"
+LOGO=binario-logo
+EOF
+
+cat << 'EOF' > /etc/lsb-release
+DISTRIB_ID=Binario
+DISTRIB_RELEASE=rolling
+DISTRIB_DESCRIPTION="Binario Linux Gaming & Security"
+DISTRIB_CODENAME=rolling
+EOF
+
+cat << 'EOF' > /etc/issue
+\e[38;2;0;220;255m
+ ____  _             _         
+| __ )(_)_ __   __ _| |_ _   _ 
+|  _ \| | '_ \ / _` | __| | | |
+| |_) | | | | | (_| | |_| |_| |
+|____/|_|_| |_|\__,_|\__|\__,_|  [Gaming & Security Edition]
+\e[0m
+Bienvenido a \e[1mBinario Linux\e[0m (\l) - Arch Linux Optimized Kernel
+Fecha y hora: \d \t
+
+Para iniciar el instalador grafico ejecuta: \e[1;32mbinario-install\e[0m
+O instalador en terminal: \e[1;36marchinstall\e[0m
+
+EOF
+
 echo "==> [Binario] Configurando idioma y locales..."
 sed -i 's/#\(en_US\.UTF-8\)/\1/' /etc/locale.gen
 sed -i 's/#\(es_ES\.UTF-8\)/\1/' /etc/locale.gen

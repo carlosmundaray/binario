@@ -58,32 +58,27 @@ binario/
 
 Tienes dos formas de generar el archivo `.iso`:
 
-### Opción A: Compilación Automática en GitHub (Recomendada)
-1. Sube este repositorio a tu cuenta de GitHub:
+### Opción A: Compilación Local en Windows con Docker (Ultra Rápida y sin descargas)
+Si estás en Windows y tienes **Docker Desktop** abierto:
+1. Haz doble clic en el archivo **`build-local.bat`** (o ejecuta `./build-local.ps1` en PowerShell).
+2. El script usará un contenedor de Arch Linux para compilar la ISO directamente en tu PC.
+3. **Ventaja:** Guarda en caché los paquetes descargados (`binario_pacman_cache`) para que las siguientes compilaciones tomen solo unos segundos.
+4. Tu ISO lista aparecerá en la carpeta **`out/`**.
+
+### Opción B: Compilación Automática en la Nube (GitHub Actions)
+Si prefieres no usar los recursos de tu PC:
+1. Sube tus cambios a GitHub:
    ```bash
-   git init
-   git add .
-   git commit -m "Inicializar Binario Linux (Gaming & Security OS)"
-   git branch -M main
-   git remote add origin https://github.com/carlosmundaray/binario.git
-   git push -u origin main
+   git push origin main
    ```
 2. Ve a la pestaña **Actions** en tu repositorio: [https://github.com/carlosmundaray/binario/actions](https://github.com/carlosmundaray/binario/actions)
-3. El workflow `Build Binario Linux ISO` compilará la ISO en los servidores de GitHub y te permitirá descargar el archivo `.iso` y su suma `SHA256` terminada.
+3. Descarga el archivo `.iso` generado directamente desde los artefactos.
 
-### Opción B: Compilación Local (Arch Linux, WSL2 o Docker)
-Si cuentas con un entorno Arch Linux o ArchWSL:
-
+### Opción C: Compilación Local en Linux / ArchWSL
+Si cuentas con un entorno Arch Linux nativo:
 ```bash
-# 1. Clonar el repositorio
-git clone https://github.com/carlosmundaray/binario.git
-cd binario
-
-# 2. Dar permisos de ejecución y compilar
 sudo ./build.sh
 ```
-
-La ISO resultante se generará en la carpeta `out/`.
 
 ---
 
